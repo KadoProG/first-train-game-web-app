@@ -27,7 +27,7 @@ export const defaultUserStatus: UserStatus = {
   exerciseLevel: '10',
   musclePainLevel: '0',
   studyLevel: '20',
-  immunityLevel: '20',
+  immunityLevel: '80',
   selfEsteemLevel: '50',
   concentrationLevel: '50',
   mealLog: [
