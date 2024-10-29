@@ -16,11 +16,17 @@ export const PreviewPage: React.FC = () => {
 
   const action = actionOptions.find((actionOption) => actionOption.name === actionId);
 
+  const [buttonClicked, setButtonClicked] = React.useState<boolean>(false);
+
   React.useEffect(() => {
-    setTimeout(() => {
-      navigate('/1', { replace: true });
-    }, 3000);
-  }, [navigate]);
+    if (!buttonClicked) {
+      const timer = setTimeout(() => {
+        navigate('/1', { replace: true });
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [navigate, buttonClicked]);
 
   if (!action) {
     return <div>アクションが見つかりません</div>;
@@ -31,7 +37,9 @@ export const PreviewPage: React.FC = () => {
       <p>アクション: {action.description}</p>
       <img src="/images/happy-cat-happy-happy-cat.gif" alt="happy cat" />
       <p>３秒後にリダイレクトされます</p>
-      <Button href="/1">さっさと戻る</Button>
+      <Button href="/1" onClick={() => setButtonClicked(true)}>
+        さっさと戻る
+      </Button>
     </div>
   );
 };
