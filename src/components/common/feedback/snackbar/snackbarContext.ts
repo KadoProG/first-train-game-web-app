@@ -7,3 +7,5 @@ interface SnackbarContextType {
 export const SnackbarContext = React.createContext<SnackbarContextType>({
   showSnackbar: () => {}, // ダミー関数
 });
+
+export const useSnackbar = () => React.useContext(SnackbarContext);
