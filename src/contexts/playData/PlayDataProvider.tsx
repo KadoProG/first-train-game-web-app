@@ -9,11 +9,13 @@ interface Props {
 }
 
 export const PlayDataProvider: React.FC<Props> = (props) => {
-  const { control } = useForm<UserStatus>({
+  const { control, watch } = useForm<UserStatus>({
     defaultValues: defaultUserStatus,
   });
 
-  const value = React.useMemo(() => ({ control }), [control]);
+  const userStatus = watch();
+
+  const value = React.useMemo(() => ({ control, userStatus }), [control, userStatus]);
 
   return <PlayDataContext.Provider value={value}>{props.children}</PlayDataContext.Provider>;
 };

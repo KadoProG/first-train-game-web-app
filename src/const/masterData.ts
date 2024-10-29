@@ -40,4 +40,5 @@ export const defaultUserStatus: UserStatus = {
   money: '100000',
   items: ['iPad'],
   point: '0',
+  selectImage: 'select_normal',
 };

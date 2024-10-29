@@ -168,4 +168,8 @@ interface UserStatus {
    * ポイント
    */
   point: string;
+  /**
+   * 現在の画像
+   */
+  selectImage: string;
 }
