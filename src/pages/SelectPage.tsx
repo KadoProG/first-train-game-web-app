@@ -1,19 +1,16 @@
 import { Button } from '@/components/common/button/Button';
+import { actionOptions } from '@/const/masterData';
 
-export const SelectPage: React.FC = () => {
-  const actionTypes = ['飯', '運動', '風呂', 'シャワーのみ', '趣味の時間', '勉強', '寝る'];
-
-  return (
-    <div>
-      <h1>Select Page</h1>
-      <p>11:13</p>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 4, width: 120 }}>
-        {actionTypes.map((actionType) => (
-          <Button key={actionType} href="/2">
-            {actionType}
-          </Button>
-        ))}
-      </div>
+export const SelectPage: React.FC = () => (
+  <div>
+    <h1>Select Page</h1>
+    <p>11:13</p>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 4, width: 120 }}>
+      {actionOptions.map((actionOption) => (
+        <Button key={actionOption.name} href={`/2?action=${actionOption.name}`}>
+          {actionOption.name}
+        </Button>
+      ))}
     </div>
-  );
-};
+  </div>
+);
