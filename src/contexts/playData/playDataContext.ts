@@ -1,13 +1,14 @@
 import { UserStatus } from '@/const';
-import { defaultUserStatus } from '@/const/masterData';
 import React from 'react';
+import { Control } from 'react-hook-form';
 
 interface PlayDataContextType {
-  userStatus: UserStatus;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  control: Control<UserStatus, any>;
 }
 
 export const PlayDataContext = React.createContext<PlayDataContextType>({
-  userStatus: defaultUserStatus,
+  control: {} as Control<UserStatus>,
 });
 
 export const usePlayData = () => React.useContext(PlayDataContext);
