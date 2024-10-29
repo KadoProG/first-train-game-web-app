@@ -1,0 +1,45 @@
+.container {
+  position: relative;
+  padding: 0 0 20px;
+}
+.Input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px; /* トラックを細く設定 */
+  background: #000; /* 黒い背景 */
+  border-radius: 2px; /* 角を丸める */
+  padding: 0;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%231976d2" viewBox="0 0 24 24"%3E%3Cpath d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/%3E%3C/svg%3E')
+      no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%231976d2" viewBox="0 0 24 24"%3E%3Cpath d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/%3E%3C/svg%3E')
+      no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+  }
+}
+
+.InputError {
+  border: 1px solid red;
+}
+
+.errorText {
+  color: red;
+  font-size: 12px;
+  margin: 0;
+  position: absolute;
+}
