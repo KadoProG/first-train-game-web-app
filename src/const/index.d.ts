@@ -21,7 +21,7 @@ interface UserStatus {
    * - 食事を抜くと、体力が低下する
    * - 腹八分目以降で、直後に運動をすると、お腹を痛くする
    */
-  hungerFullnessLevel: number;
+  hungerFullnessLevel: string;
   /**
    * カフェインレベル
    *
@@ -32,7 +32,7 @@ interface UserStatus {
    * - それ以上の摂取は健康に悪影響を及ぼす
    * - 一度に80杯のコーヒーを飲むと死にます
    */
-  caffeineLevel: number;
+  caffeineLevel: string;
   /**
    * 自律神経レベル
    *
@@ -43,7 +43,7 @@ interface UserStatus {
    * - 一日の中で、交感神経と副交感神経のバランスが大切
    * - 自律神経が乱れると、疲れやすかったり、ストレスを感じやすくなる
    */
-  autonomicNervousLevel: number;
+  autonomicNervousLevel: string;
   /**
    * 眠気レベル
    *
@@ -55,7 +55,7 @@ interface UserStatus {
    * - 交感神経が優位だと、眠気を感じにくい
    * - 副交感神経が優位だと、眠気を感じやすい
    */
-  sleepinessLevel: number;
+  sleepinessLevel: string;
   /**
    * ストレスレベル
    *
@@ -68,7 +68,7 @@ interface UserStatus {
    * - ストレスが高いと、食欲が増す
    * - ストレスが高いと、自己肯定感が低下する
    */
-  stressLevel: number;
+  stressLevel: string;
   /**
    * メタボレベル
    *
@@ -84,7 +84,7 @@ interface UserStatus {
    *
    * 一度に大量の食事、かつ、運動不足の場合、この値が上昇する
    */
-  exerciseLevel: number;
+  exerciseLevel: string;
   /**
    * 筋肉痛レベル
    *
@@ -97,7 +97,7 @@ interface UserStatus {
    *
    * @default 0
    */
-  musclePainLevel: number;
+  musclePainLevel: string;
   /**
    * 勉強レベル
    *
@@ -109,7 +109,7 @@ interface UserStatus {
    *
    * テスト終了後は0に戻る（あくまでテストのための指標）
    */
-  studyLevel: number;
+  studyLevel: string;
   /**
    * 免疫レベル
    *
@@ -118,7 +118,7 @@ interface UserStatus {
    * この値が高いほど病気にかかりにくくなる
    * この値が低いほど病気にかかりやすくなる
    */
-  immunityLevel: number;
+  immunityLevel: string;
   /**
    * 自己肯定感（自己評価）
    *
@@ -126,7 +126,18 @@ interface UserStatus {
    *
    * @default 50
    */
-  selfEsteemLevel: number;
+  selfEsteemLevel: string;
+  /**
+   * 集中力
+   *
+   * 0~100の数値で表現（100に近いと集中力が高い）
+   *
+   * - 集中力が高いと、作業効率が上がる
+   * - 集中力が低いと、作業効率が下がる
+   * - 集中力が高いと、疲れにくい
+   * - 集中力が低いと、疲れやすい
+   */
+  concentrationLevel: string;
   /**
    * 食事ログ
    *
@@ -148,9 +159,13 @@ interface UserStatus {
   /**
    * 所持金
    */
-  money: number;
+  money: string;
   /**
    * アイテム
    */
   items: string[];
+  /**
+   * ポイント
+   */
+  point: string;
 }

@@ -74,6 +74,7 @@ export const Slider = <T extends FieldValues>(props: SliderProps<T>) => {
             left: `${((option.value - min) / (max - min)) * 100}%`,
             top: -10,
             transform: 'translateX(-50%)',
+            whiteSpace: 'nowrap',
           }}
         >
           {option.label}
