@@ -36,6 +36,14 @@ a {
 
 img {
   object-fit: cover;
+  user-drag: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-appearance: none;
 }
 
 @media screen and (prefers-color-scheme: dark) {
